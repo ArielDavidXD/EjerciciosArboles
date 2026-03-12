@@ -1,9 +1,12 @@
 import Ejercicio1ArbolGenealogico.ArbolGenealogico;
+import Ejercicio2Torneo.ArbolTorneo;
 
 public class Main {
     public static void main(String[] args) {
         // Crear el árbol con el ancestro principal
         ArbolGenealogico arbol = new ArbolGenealogico("Carlos", "1950");
+        ArbolTorneo torneo = new ArbolTorneo();
+
 
         // Hijos de Carlos
         arbol.insertar("Carlos", "Luis", "1975");
@@ -34,6 +37,10 @@ public class Main {
         arbol.Desc("Carlos");
         System.out.println(arbol.profundidadArbol());
 
+
+        torneo.crearArbol();
+        torneo.recorrerYSimular(torneo.getRaiz());
+        torneo.mostrarBracket(torneo.getRaiz(), "  ");
 
     }
 }
